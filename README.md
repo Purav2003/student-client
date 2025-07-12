@@ -1,4 +1,4 @@
-# 🎓 Student Result Management System (SRMS)
+# 🎓 Student Result Management System (SRMS) - Frontend
 
 A clean and responsive **One Page Application** built with **Next.js** and **Tailwind CSS** for managing students, courses, and their results.
 
