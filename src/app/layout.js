@@ -10,6 +10,13 @@ const Layout = ({ children }) => {
   const pathname = usePathname();
   const authPaths = ['/login', '/verify-otp'];
 
+  useEffect(() => {
+    const token = typeof window !== 'undefined' && localStorage.getItem('token');
+    if (!token && !authPaths.includes(pathname)) {
+      window.location.href = '/login';
+    }
+  }, [pathname]);
+
   return (
     <>
       <html>
@@ -23,7 +30,7 @@ const Layout = ({ children }) => {
           }
           <NextTopLoader showSpinner={false} />
           <Toaster />
-          <div className={`${authPaths.includes(pathname) ? '' : 'lg:ml-64'} min-h-screen bg-primaryBg`}>
+          <div className={`${authPaths.includes(pathname) ? '' : 'lg:ml-64'} min-h-screen bg-[#f8f4ee]`}>
             {children}
           </div>
         </body>

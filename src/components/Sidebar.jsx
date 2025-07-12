@@ -51,20 +51,20 @@ const Sidebar = () => {
         <>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`lg:hidden fixed ${isOpen ? 'top-3' : 'top-2'} ${isOpen ? 'left-48' : 'left-4'} z-50 p-2 text-primaryText rounded-lg`}
+                className={`lg:hidden fixed ${isOpen ? 'top-3' : 'top-2'} ${isOpen ? 'left-48' : 'left-4'} z-50 p-2 text-[#000000] rounded-lg`}
             >
                 {isOpen ? <X size={36} /> : <AlignLeft size={30} />}
             </button>
 
             {/* Sidebar */}
-            <div className={`fixed top-0 left-0 h-full w-64 bg-containerBg border-r-4 border-primaryText shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+            <div className={`fixed top-0 left-0 h-full w-64 bg-[#ffffff] border-r-4 border-[#000000] shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
                 {/* Header */}
-                <div className="p-6 border-b-2 border-primaryText">
-                    <h2 className="text-2xl font-bold text-primaryText">Student <br></br>Result Management System</h2>
+                <div className="p-6 border-b-2 border-[#000000]">
+                    <h2 className="text-2xl font-bold text-[#000000]">Student <br></br>Result Management System</h2>
                 </div>
 
                 {/* Navigation Links */}
-                <div className="p-4 border-t-2 border-primaryText space-y-2 flex flex-col justify-center items-center w-full">
+                <div className="p-4 border-t-2 border-[#000000] space-y-2 flex flex-col justify-center items-center w-full">
                     {links.map((link) => (
                         <button
                             key={link.name}
@@ -75,7 +75,7 @@ const Sidebar = () => {
                                     handleClick(link.path);
                                 }
                             }}
-                            className={`cursor-pointer w-full flex items-center gap-3 p-3  rounded-lg bg-gray-100 text-primaryText hover:bg-gray-200 transition-all duration-200 ${pathname === link.path ? 'bg-secondaryBg text-secondaryText hover:bg-secondaryBg/80' : ''
+                            className={`cursor-pointer w-full flex items-center gap-3 p-3 rounded-lg bg-gray-100 text-black hover:bg-gray-200 transition-all duration-200 ${pathname === link.path ? 'bg-slate-950 text-white hover:bg-slate-950/80' : ''
                                 }`}
                         >
                             {link.icon}
