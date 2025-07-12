@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Plus } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
 import Link from 'next/link';
+import { Modal } from 'antd';
 import TableComponent from '@/components/Table';
 import SearchBar from '@/components/SearchBar';
 import LoaderComponent from '@/components/LoaderComponent';
@@ -23,12 +24,26 @@ const Listing = ({
   const debouncedSearchTerm = useDebounce(searchTerm, 400);
   const [error, setError] = useState(null);
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+
   useEffect(() => {
     fetchFn(setData, setLoading, setError, debouncedSearchTerm);
   }, [debouncedSearchTerm]);
 
-  const handleDelete = (id) => {
-    deleteFn(id, setData, setLoading, setError, debouncedSearchTerm);
+  const showDeleteModal = (id) => {
+    setSelectedId(id);
+    setIsModalVisible(true);
+  };
+
+  const handleDeleteConfirmed = () => {
+    deleteFn(selectedId, setData, setLoading, setError, debouncedSearchTerm);
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+    setSelectedId(null);
   };
 
   return (
@@ -47,7 +62,7 @@ const Listing = ({
         {loading && <LoaderComponent />}
         {data?.length > 0 && !loading ? (
           <TableComponent
-            columns={getColumnsFn(handleDelete)}
+            columns={getColumnsFn(showDeleteModal)}
             data={data}
             loading={loading}
           />
@@ -69,6 +84,18 @@ const Listing = ({
             </Link>
           </div>
         )}
+
+        {/* Delete Confirmation Modal */}
+        <Modal
+          title="Confirm Delete"
+          open={isModalVisible}
+          onOk={handleDeleteConfirmed}
+          onCancel={handleCancel}
+          okText="Yes, Delete"
+          cancelText="Cancel"
+        >
+          <p>Are you sure you want to delete this student?</p>
+        </Modal>
       </div>
     </div>
   );
