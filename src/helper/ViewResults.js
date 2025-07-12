@@ -12,7 +12,6 @@ export const getColumns = (handleDelete) => [
         key: 'id',
         render: (text) => <span className="text-primaryText">#{text}</span>,
         sorter: (a, b) => a.id.localeCompare(b.id), // Sort by ID
-        defaultSortOrder: 'ascend',    // Optional: set default sort order
         
     },
     {
@@ -47,20 +46,20 @@ export const getColumns = (handleDelete) => [
         },
     },
     
-    {
-        title: 'Delete',
-        key: 'delete',
-        render: (_, record) => (
-            <div className='w-full flex items-center justify-center'>
-                <button
-                    onClick={() => handleDelete(record.id)}
-                    className="text-red-500 hover:text-red-700 font-semibold"
-                >
-                    <X />
-                </button>
-            </div>
-        ),
-    },
+    // {
+    //     title: 'Delete',
+    //     key: 'delete',
+    //     render: (_, record) => (
+    //         <div className='w-full flex items-center justify-center'>
+    //             <button
+    //                 onClick={() => handleDelete(record.id)}
+    //                 className="text-red-500 hover:text-red-700 font-semibold"
+    //             >
+    //                 <X />
+    //             </button>
+    //         </div>
+    //     ),
+    // },
 ];
 
 
