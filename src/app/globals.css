@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body{
+  font-family: 'JetBrains Mono', monospace;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+  color: #000;
+}
