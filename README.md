@@ -66,6 +66,37 @@ npm run dev
 
 ---
 
+## 🖼️ Screenshots
+
+### Login Page
+![Login Screenshot](public/screenshots/login.png)
+
+### Home Page
+![Home Page](public/screenshots/home.png)
+
+### Add Student Form
+![Add Student](public/screenshots/add-student.png)
+
+### View Students Form
+![View Students](public/screenshots/view-students.png)
+
+### Add Course Form
+![Add Course](public/screenshots/add-course.png)
+
+### View Courses Form
+![View Courses](public/screenshots/view-courses.png)
+
+### Add Result Form
+![Add Result](public/screenshots/add-result.png)
+
+### View Results Form
+![View Results](public/screenshots/view-results.png)
+
+
+
+
+---
+
 ## 📁 Folder Structure (Simplified)
 
 ```
