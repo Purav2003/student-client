@@ -6,7 +6,7 @@ A clean and responsive **One Page Application** built with **Next.js** and **Tai
 
 ## 📸 Demo
 
-> 🌐 Live URL:
+> 🌐 Live URL: [https://srms-purav.vercel.app/](https://srms-purav.vercel.app/)
 
 ## ✨ Features
 
