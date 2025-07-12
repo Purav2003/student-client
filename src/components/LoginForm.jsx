@@ -15,6 +15,20 @@ const LoginForm = ({ onLoginSuccess }) => {
         e.preventDefault();
         setLoading(true);
         setError('');
+        // check email 
+        if (!form.email || !form.password) {
+            setError('Email and Password are required');
+            setLoading(false);
+            return;
+        }
+        // check email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(form.email)) {
+            setError('Invalid email format');
+            setLoading(false);
+            return;
+        }
+        
         try {
             const res = await api.post('/auth/login', form);
             if (res.status === 200) {
