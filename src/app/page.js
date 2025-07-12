@@ -1,20 +1,23 @@
 'use client';
 import React, { useState, useEffect } from 'react';// Adjust the import path as necessary
 import Link from 'next/link';
-import { fetchStatsCards ,fetchData} from '@/helper/ViewStats'; // Adjust the import path as necessary
+import { fetchStatsCards, fetchData } from '@/helper/ViewStats'; // Adjust the import path as necessary
 import StatCard from '@/components/StatCard';
 import { Loader } from 'lucide-react';
 
 export default function Home() {
-  const [data, setData] = useState();
   const [statsCards, setStatsCards] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchData(setData, setLoading);
-    const stats = fetchStatsCards(data)
+  const fetchStats = async () => {
+    const a = await fetchData(setLoading);
+    const stats = fetchStatsCards(a);
     setStatsCards(stats);
-  }, [data]);
+  }
+
+  useEffect(() => {
+    fetchStats();
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">

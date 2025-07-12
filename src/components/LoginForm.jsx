@@ -32,13 +32,18 @@ const LoginForm = ({ onLoginSuccess }) => {
         try {
             const res = await api.post('/auth/login', form);
             if (res.status === 200) {
-                onLoginSuccess(res.data.access_token);
-            } else {
-                setError(res.data.detail || res.data.message || 'Login failed');
+                onLoginSuccess(res?.data.access_token);
+            } 
+            else if (res.status === 422){
+                setError('Invalid email or password');
+            }
+            else {
+                setError(res?.data?.detail || res?.data?.message || 'Login failed');
             }
             
         } catch (err) {
-            setError(err.response?.data?.detail || 'Network error');    
+            console.error('Login error:', err);
+            setError(err?.response?.data?.detail[0]?.ctx?.reason || err?.response?.data?.detail || 'Network error');    
         }
         setLoading(false);
     };
@@ -58,7 +63,6 @@ const LoginForm = ({ onLoginSuccess }) => {
                     placeholder="Email"
                     value={form.email}
                     onChange={handleChange}
-                    required
                     className="w-full text-sm sm:text-lg bg-transparent outline-none placeholder:text-gray-500"
                 />
             </div>
@@ -71,7 +75,6 @@ const LoginForm = ({ onLoginSuccess }) => {
                     placeholder="Password"
                     value={form.password}
                     onChange={handleChange}
-                    required
                     className="w-full text-sm sm:text-lg bg-transparent outline-none placeholder:text-gray-500"
                 />
                 {

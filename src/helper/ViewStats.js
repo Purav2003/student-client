@@ -27,10 +27,10 @@ export const fetchStatsCards = (data) => {
   ];
 };
 
-export const fetchData = async (setData, setLoading) => {
+export const fetchData = async (setLoading) => {
     try {
       const response = await api.get('/stats/view-stats');
-      setData(response.data);
+      return response?.data;
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
