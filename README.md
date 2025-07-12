@@ -27,11 +27,11 @@ A clean and responsive **One Page Application** built with **Next.js** and **Tai
 | ---------------- | ----------------------------------------- |
 | 🏠 Home          | Shows all the statistics                  |
 | ➕ Add Students  | Add students with full validation         |
-| 📋 Students List | View and delete students                  |
+| 📋 Students List | View, Search and delete students          |
 | ➕ Add Courses   | Add new courses                           |
-| 📋 Courses List  | View and delete courses                   |
+| 📋 Courses List  | View, Seach and delete courses            |
 | ➕ Add Results   | Add scores linked to students and courses |
-| 📋 Results List  | View all result entries dynamically       |
+| 📋 Results List  | View and Search result                    |
 
 ## 🛠️ Installation & Setup
 
