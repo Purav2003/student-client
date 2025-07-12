@@ -12,7 +12,7 @@ const SearchBar = (
                 onChange={(e) => setSearchTerm(e.target.value)}
                 type="text"
                 placeholder={placeholder || "Search"}
-                className="pl-14 border border-[#000000] w-full px-4 py-3 bg-[#ffffff] text-[#000000] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#000000] transition"
+                className="pl-14 border text-sm sm:text-lg border-[#000000] w-full px-4 py-3 bg-[#ffffff] text-[#000000] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#000000] transition"
             />
         </div>
     );

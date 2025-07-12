@@ -68,16 +68,16 @@ const Listing = ({
           />
         ) : !loading && (
           <div className="flex flex-col items-center justify-center min-h-[300px] text-[#000000] text-center border-2 border-dashed border-zinc-300 rounded-2xl p-10 shadow-sm bg-[#ffffff]">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{noDataText}</h2>
-            <p className="text-base sm:text-lg text-zinc-600 mb-2">
+            <h2 className="text-lg sm:text-3xl font-bold mb-4">{noDataText}</h2>
+            <p className="text-sm sm:text-lg text-zinc-600 mb-2">
               It looks like you haven't added any yet.
             </p>
-            <p className="text-base sm:text-lg text-zinc-600 mb-6">
+            <p className="text-sm sm:text-lg text-zinc-600 mb-6">
               Click below to add your first entry.
             </p>
 
             <Link href={addLink}>
-              <button className="cursor-pointer mt-2 px-5 py-3 bg-[#000000] text-[#ffffff] rounded-xl hover:bg-[#000000]/90 transition flex items-center gap-2">
+              <button className="cursor-pointer mt-2 text-sm px-3 py-2 sm:text-lg sm:px-5 sm:py-3 bg-[#000000] text-[#ffffff] rounded-xl hover:bg-[#000000]/90 transition flex items-center gap-2">
                 <Plus className="w-5 h-5" />
                 {addText}
               </button>
@@ -85,7 +85,6 @@ const Listing = ({
           </div>
         )}
 
-        {/* Delete Confirmation Modal */}
         <Modal
           title="Confirm Delete"
           open={isModalVisible}
@@ -93,8 +92,10 @@ const Listing = ({
           onCancel={handleCancel}
           okText="Yes, Delete"
           cancelText="Cancel"
+          okButtonProps={{ style: { backgroundColor: '#000', color: '#fff', border: 'none', marginTop: '30px' } }}
+          cancelButtonProps={{ style: { color: '#000', border: 'black solid 1px' } }}
         >
-          <p>Are you sure you want to delete this student?</p>
+          <p>Are you sure you want to delete this entry?</p>
         </Modal>
       </div>
     </div>
