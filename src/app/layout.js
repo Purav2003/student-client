@@ -23,6 +23,11 @@ const Layout = ({ children }) => {
         <head>
           <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
           <title>SRMS</title>
+           <link rel="icon" href="/logo.svg" />
+          <link rel="manifest" href="/manifest.json" type="application/manifest+json" />
+          <link rel="apple-touch-icon" href="/fav.png" />
+          <meta name="theme-color" content="#000000" />
+          <link rel="icon" href="/logo.svg" />
         </head>
         <body>
           {authPaths.includes(pathname) ? null :
