@@ -41,7 +41,7 @@ A clean and responsive **One Page Application** built with **Next.js** and **Tai
 
 ```bash
 git clone https://github.com/Purav2003/student-client.git
-cd srms
+cd student-client
 ```
 
 ### 2. Create `.env` file
